@@ -1,0 +1,46 @@
+# sbt build artifacts
+target/
+project/target/
+project/project/
+
+# Metals and BSP
+.metals/
+.bloop/
+.bsp/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Cache directories
+.ivy2/
+.sbt/
+.cache/
+
+# Node modules (if any)
+node_modules/
+
+# Data files (Wikidata downloads)
+*.ttl
+*.ttl.gz
+wikidata/
+
+# Documentation generation
+site/
+docs/_site/

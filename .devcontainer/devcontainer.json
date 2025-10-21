@@ -1,0 +1,49 @@
+{
+  "name": "Grokking Functional Programming - Scala 3",
+  "image": "sbtscala/scala-sbt:eclipse-temurin-21.0.6_7_1.10.11_3.6.4",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "scalameta.metals",
+        "scala-lang.scala",
+        "hbenl.vscode-test-explorer"
+      ],
+      "settings": {
+        "metals.javaHome": "/opt/java/openjdk",
+        "metals.sbtScript": "/usr/local/bin/sbt",
+        "metals.serverVersion": "latest.snapshot",
+        "files.watcherExclude": {
+          "**/target/**": true,
+          "**/.bloop/**": true,
+          "**/.metals/**": true
+        }
+      }
+    }
+  },
+
+  "forwardPorts": [3030],
+  "portsAttributes": {
+    "3030": {
+      "label": "Apache Jena Fuseki",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "mounts": [
+    "source=grokkingfp-sbt-cache,target=/root/.sbt,type=volume",
+    "source=grokkingfp-ivy-cache,target=/root/.ivy2,type=volume",
+    "source=grokkingfp-coursier-cache,target=/root/.cache/coursier,type=volume"
+  ],
+
+  "postCreateCommand": "sbt compile",
+
+  "remoteUser": "root",
+
+  "features": {},
+
+  "runArgs": [
+    "--memory=4g",
+    "--cpus=2"
+  ]
+}
